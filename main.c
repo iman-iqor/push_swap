@@ -15,24 +15,9 @@ char* join_args(int argc,char** argv)
     }
     return args;
 }
-int count_word(char* args)
-{
-    int i;
-    i = 0;
-    int cw;
-    cw  = 0;
-    while(args[i])
-    {
-        while(args[i] != " " )
-            i++;
-        if(args[i] == )
-    }
-}
-char** split_args(char* args)
-{
-    int i = 0;
-    
-}
+
+
+
 
 int main(int argc,char** argv)
 {
@@ -40,10 +25,22 @@ int main(int argc,char** argv)
         return 1;
     
     char* args;
-    char** numbers;
+    char** two_d;
+    int i = 0;
+
     args = join_args(argc,argv);
-    printf("%s\n",args);
-    numbers = split_args(args);
+
+    two_d = split_args(args);
+
+    while(two_d[i])
+    {
+        printf("%s\n",two_d[i]);
+        free(two_d[i]);
+        i++;
+    }
+    
+    free(two_d);
     free(args);
+    
     return 0;
 }

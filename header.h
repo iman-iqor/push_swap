@@ -1,9 +1,10 @@
 #ifndef HEADER_H
-#define  HEADER_H
+#define HEADER_H
 
-#include<unistd.h>
-#include"stdio.h"
-#include"./libft/libft.h"
+#include <unistd.h>
+#include "stdio.h"
+#include <stdlib.h>
+#include "./libft/libft.h"
 
 typedef struct s_stack_list
 {
@@ -11,6 +12,21 @@ typedef struct s_stack_list
     int index;
 } t_stack_list;
 
-char	*ft_sstrjoin(char *save, char *buff);
+typedef struct s_state
+{
+    int i ;
+    int cw ;
+    int start;
+    int end;
+    int k;
+    char **two_d ;
+}   t_state;
 
-#endif 
+char *ft_sstrjoin(char *save, char *buff);
+char **split_args(char *args);
+char *ft_strncopy(char *str, int start, int end);
+char *ft_free(char **arr);
+int count_word(char* args);
+int ff_atoi(char* str);
+
+#endif

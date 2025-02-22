@@ -6,7 +6,7 @@
 /*   By: imiqor <imiqor@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 00:39:27 by imiqor            #+#    #+#             */
-/*   Updated: 2024/11/14 18:02:27 by imiqor           ###   ########.fr       */
+/*   Updated: 2025/02/22 18:28:34 by imiqor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,4 @@ int	ft_atoi(const char *str)
 		return (result);
 	return (-result);
 }
+//return long

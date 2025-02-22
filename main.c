@@ -16,7 +16,11 @@ char* join_args(int argc,char** argv)
     return args;
 }
 
-
+int ff_atoi(char* str)
+{
+    int i;
+    i = 0;
+}
 
 
 int main(int argc,char** argv)

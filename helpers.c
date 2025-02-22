@@ -83,22 +83,22 @@ int count_word(char* args)
     return cw;
 }
 
-void init_state(t_state state,char* args)
+void init_state(t_state *state,char* args)
 {
-    state.i = 0;
-    state.cw = 0;
-    state.start = 0;
-    state.end = 0;
-    state.k = 0;
-    state.cw = count_word(args);
-    state.two_d = (char**) malloc((state.cw+1) * sizeof(char*));
+    state->i = 0;
+    state->cw = 0;
+    state->start = 0;
+    state->end = 0;
+    state->k = 0;
+    state->cw = count_word(args);
+    state->two_d = (char**) malloc((state->cw+1) * sizeof(char*));
 }
 
 char** split_args(char* args)
 {
     t_state state;
 
-    init_state(state,args);
+    init_state(&state,args);
     if(!state.two_d)
         return NULL;
     while(args[state.i])

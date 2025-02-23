@@ -10,6 +10,7 @@ typedef struct s_stack_list
 {
     int number;
     int index;
+    struct s_stack_list *next;
 } t_stack_list;
 
 typedef struct s_state
@@ -27,6 +28,10 @@ char **split_args(char *args);
 char *ft_strncopy(char *str, int start, int end);
 char *ft_free(char **arr);
 int count_word(char* args);
-int ff_atoi(char* str);
+long ff_atoi(char* str);
+int is_it_alpha(char* str);
+char* join_args(int argc,char** argv);
+void	ft_putstr(char *s1, char *s2);
+
 
 #endif

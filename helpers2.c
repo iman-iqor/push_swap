@@ -41,13 +41,24 @@ int is_it_alpha(char* str)
     }
     return 0;
 }
-
-
-long ff_atoi(char* str)
+void check_int_overflow(long number,t_stack_list *list,char **two_d,char* args)
 {
-    long i;
+    if(number > INT_MAX || number < INT_MIN)
+    {
+        ft_putstr("ER","ROR\n");
+        free_list(list);
+        ft_free(two_d);
+        free(args);
+    
+        exit(1);
+    }
+}
+
+int ff_atoi(char* str,t_stack_list *list,char **two_d,char* args)
+{
+    int i;
     long result;
-    long signe;
+    int signe;
     i = 0;
     result= 0;
     signe = 1;
@@ -64,11 +75,18 @@ long ff_atoi(char* str)
             result = result *10 + str[i] - 48;
             i++;
         }
-        return result * signe;
+        check_int_overflow(result * signe,list,two_d,args);
+        return ((int)(result * signe));
     }
     else
-        return 1;
+    {
+        ft_putstr("ERROR","\n");
+        free_list(list);
+        ft_free(two_d);
+        free(args);
     
+        exit(1);
+    }
     
 }
 
@@ -88,6 +106,7 @@ char* join_args(int argc,char** argv)
     }
     return args;
 }
+
 void	ft_putstr(char *s1, char *s2)
 {
 	if (!s1)

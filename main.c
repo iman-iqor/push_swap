@@ -41,6 +41,16 @@ void print_list(t_stack_list *list)
     printf("NULL\n");
 }
 
+void free_list(t_stack_list *head)
+{
+    t_stack_list *tmp;
+    while(head)
+    {
+        tmp = head;
+        head = head->next;
+        free(tmp);
+    }
+}
 
 
 int main(int argc,char** argv)
@@ -60,13 +70,12 @@ int main(int argc,char** argv)
     while(two_d[i])
     {
         printf(" char ==> %s\n",two_d[i]);
-        printf(" number ==> %li\n",ff_atoi(two_d[i]));
-        append_node(&list,ff_atoi(two_d[i]));
-        free(two_d[i]);
+        // printf(" number ==> %li\n",ff_atoi(two_d[i]));
+        append_node(&list,ff_atoi(two_d[i],list,two_d,args));
         i++;
     }
     print_list(list);
-
+    free_list(list);
     free(two_d);
     free(args);
     

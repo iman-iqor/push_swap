@@ -5,6 +5,7 @@
 #include "stdio.h"
 #include <stdlib.h>
 #include "./libft/libft.h"
+#include <limits.h>
 
 typedef struct s_stack_list
 {
@@ -28,10 +29,11 @@ char **split_args(char *args);
 char *ft_strncopy(char *str, int start, int end);
 char *ft_free(char **arr);
 int count_word(char* args);
-long ff_atoi(char* str);
+int ff_atoi(char* str,t_stack_list *list,char **two_d,char* args);
 int is_it_alpha(char* str);
 char* join_args(int argc,char** argv);
 void	ft_putstr(char *s1, char *s2);
+void free_list(t_stack_list *head);
 
 
 #endif

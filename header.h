@@ -34,6 +34,9 @@ int is_it_alpha(char* str);
 char* join_args(int argc,char** argv);
 void	ft_putstr(char *s1, char *s2);
 void free_list(t_stack_list *head);
+t_stack_list *create_node(int number);
+void append_node(t_stack_list **head,int number);
+void print_list(t_stack_list *list);
 
 
 #endif

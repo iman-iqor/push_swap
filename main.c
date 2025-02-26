@@ -1,57 +1,21 @@
 #include"header.h"
 
+int is_sorted(t_stack_list *list)
+{
 
-t_stack_list *create_node(int number)
-{
-    t_stack_list *node;
-    node = (t_stack_list*) malloc(sizeof(t_stack_list));
-    if(!node)
+    while(list && list->next)
     {
-        ft_putstr("memory alocation","failed\n");
-        exit (1);
+        
+        if(list->number > list->next->number)
+        {
+            return 0;
+        }
+        list = list->next;
     }
-    node->number = number;
-    node->next = NULL;
-    return node;
-}
-void append_node(t_stack_list **head,int number)
-{
-    t_stack_list *node;
-    node = create_node(number);
-    if(*head == NULL)
-    {
-        *head = node;
-        return;
-    }
-    t_stack_list *current;
-    current = *head;
-    while(current->next)
-    {
-        current=current->next;
-    }
-    current->next = node;
-}
-void print_list(t_stack_list *list)
-{
-    while(list)
-    {
-        printf("%i\n",list->number);
-        list= list->next;
-    }
-    printf("NULL\n");
-}
+ 
+    return 1;
 
-void free_list(t_stack_list *head)
-{
-    t_stack_list *tmp;
-    while(head)
-    {
-        tmp = head;
-        head = head->next;
-        free(tmp);
-    }
 }
-
 
 int main(int argc,char** argv)
 {
@@ -62,21 +26,24 @@ int main(int argc,char** argv)
     char** two_d;
     int i = 0;
     t_stack_list *list;
+    t_stack_list *test;
 
     args = join_args(argc,argv);
-
     two_d = split_args(args);
-
     while(two_d[i])
     {
-        printf(" char ==> %s\n",two_d[i]);
-        // printf(" number ==> %li\n",ff_atoi(two_d[i]));
         append_node(&list,ff_atoi(two_d[i],list,two_d,args));
         i++;
     }
+    test = list;
+    if(is_sorted(test))
+    {
+        ft_putstr("ERROR","\n");
+        return 0;
+    }
     print_list(list);
     free_list(list);
-    free(two_d);
+    ft_free(two_d);
     free(args);
     
     return 0;

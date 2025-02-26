@@ -39,7 +39,11 @@ int main(int argc,char** argv)
     if(is_sorted(test))
     {
         ft_putstr("ERROR","\n");
-        return 0;
+        // print_list(list);
+        // free_list(list);
+        // ft_free(two_d);
+        // free(args);
+        exit(1);
     }
     print_list(list);
     free_list(list);

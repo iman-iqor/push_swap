@@ -1,6 +1,6 @@
 #include"header.h"
 
-char	*ft_free(char **arr)
+char	*ftt_free(char **arr)
 {
 	int	i;
 
@@ -87,7 +87,7 @@ char** split_args(char* args)
         {
             state.two_d[state.k] = ft_strncopy(args,state.start,state.end);
             if(!state.two_d[state.k])
-                ft_free(state.two_d);
+                ftt_free(state.two_d);
             state.k++;
         }
     }

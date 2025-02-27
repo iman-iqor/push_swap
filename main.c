@@ -1,21 +1,5 @@
 #include"header.h"
 
-int is_sorted(t_stack_list *list)
-{
-
-    while(list && list->next)
-    {
-        
-        if(list->number > list->next->number)
-        {
-            return 0;
-        }
-        list = list->next;
-    }
- 
-    return 1;
-
-}
 
 int main(int argc,char** argv)
 {
@@ -36,18 +20,10 @@ int main(int argc,char** argv)
         i++;
     }
     test = list;
-    if(is_sorted(test))
-    {
-        ft_putstr("ERROR","\n");
-        // print_list(list);
-        // free_list(list);
-        // ft_free(two_d);
-        // free(args);
-        exit(1);
-    }
+    check_is_sorted(is_sorted(test),&list,two_d,args);
     print_list(list);
     free_list(list);
-    ft_free(two_d);
+    ftt_free(two_d);
     free(args);
     
     return 0;

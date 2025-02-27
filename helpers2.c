@@ -47,13 +47,21 @@ void check_int_overflow(long number,t_stack_list *list,char **two_d,char* args)
     {
         ft_putstr("ER","ROR\n");
         free_list(list);
-        ft_free(two_d);
+        ftt_free(two_d);
         free(args);
     
         exit(1);
     }
 }
-
+void else_of_atoi(t_stack_list** list,char** two_d,char* args)
+{
+        ft_putstr("ERRROR","\n");
+        free_list(*list);
+        ftt_free(two_d);
+        free(args);
+    
+        exit(1);
+}
 int ff_atoi(char* str,t_stack_list *list,char **two_d,char* args)
 {
     int i;
@@ -62,56 +70,23 @@ int ff_atoi(char* str,t_stack_list *list,char **two_d,char* args)
     i = 0;
     result= 0;
     signe = 1;
-    if(!is_it_alpha(str))
-    {
-        if(str[i] == '-' || str[i] == '+')
-        {
-        if(str[i] == '-')
-            signe = -1;
-        i++;
-        }
-        while(str[i]>= '0' && str[i] <= '9')
-        {
-            result = result *10 + str[i] - 48;
-            i++;
-        }
-        check_int_overflow(result * signe,list,two_d,args);
-        return ((int)(result * signe));
-    }
-    else
-    {
-        ft_putstr("ERROR","\n");
-        free_list(list);
-        ft_free(two_d);
-        free(args);
-    
-        exit(1);
-    }
-    
-}
 
-char* join_args(int argc,char** argv)
-{
-    int i;
-    char* args; 
-    i = 1;
-    args  = NULL;
+    if(is_it_alpha(str))
+        else_of_atoi(&list,two_d,args);
     
-    while(argv[i])
+    if(str[i] == '-' || str[i] == '+')
     {
-        args = ft_sstrjoin(args,argv[i]);
-        if(i != argc -1)
-            args = ft_sstrjoin(args," ");
+    if(str[i] == '-')
+        signe = -1;
+    i++;
+    }
+    while(str[i]>= '0' && str[i] <= '9')
+    {
+        result = result *10 + str[i] - 48;
         i++;
     }
-    return args;
+    check_int_overflow(result * signe,list,two_d,args);
+    return ((int)(result * signe));
 }
 
-void	ft_putstr(char *s1, char *s2)
-{
-	if (!s1)
-		write(2, "(null)", 6);
-	else
-		write(2, s1, ft_strlen(s1));
-	write(2, s2, ft_strlen(s2));
-}
+

@@ -50,3 +50,28 @@ void free_list(t_stack_list *head)
         free(tmp);
     }
 }
+char* join_args(int argc,char** argv)
+{
+    int i;
+    char* args; 
+    i = 1;
+    args  = NULL;
+    
+    while(argv[i])
+    {
+        args = ft_sstrjoin(args,argv[i]);
+        if(i != argc -1)
+            args = ft_sstrjoin(args," ");
+        i++;
+    }
+    return args;
+}
+
+void	ft_putstr(char *s1, char *s2)
+{
+	if (!s1)
+		write(2, "(null)", 6);
+	else
+		write(2, s1, ft_strlen(s1));
+	write(2, s2, ft_strlen(s2));
+}

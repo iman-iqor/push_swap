@@ -27,7 +27,7 @@ typedef struct s_state
 char *ft_sstrjoin(char *save, char *buff);
 char **split_args(char *args);
 char *ft_strncopy(char *str, int start, int end);
-char *ft_free(char **arr);
+char *ftt_free(char **arr);
 int count_word(char* args);
 int ff_atoi(char* str,t_stack_list *list,char **two_d,char* args);
 int is_it_alpha(char* str);
@@ -37,6 +37,8 @@ void free_list(t_stack_list *head);
 t_stack_list *create_node(int number);
 void append_node(t_stack_list **head,int number);
 void print_list(t_stack_list *list);
+void else_of_atoi(t_stack_list** list,char** two_d,char* args);
+void check_is_sorted(int value,t_stack_list **list,char** two_d,char* args);
 
 
 #endif

@@ -39,6 +39,9 @@ void print_list(t_stack_list *list);
 void else_of_atoi(t_stack_list** list,char** two_d,char* args);
 void check_is_sorted(int value,t_stack_list **list,char** two_d,char* args);
 int is_sorted(t_stack_list *list);
-
+void sa(t_stack_list** list);
+void swap(t_stack_list** list);
+void    sb(t_stack_list **stack_b);
+void ss(t_stack_list **stack_a,t_stack_list** stack_b);
 
 #endif

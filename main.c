@@ -42,10 +42,11 @@ int main(int argc,char** argv)
     {
         append_node(&list,ff_atoi(two_d[i],list,two_d,args));
         i++;
-    }
+    } 
     check_is_sorted(is_sorted(list),&list,two_d,args);
     check_is_duplicated(is_duplicated(list),&list,two_d,args);
-     print_list(list);
+    sa(&list);
+    print_list(list);
     free_list(list);
     ftt_free(two_d);
     free(args);

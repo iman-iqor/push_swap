@@ -10,7 +10,6 @@
 typedef struct s_stack_list
 {
     int number;
-    int index;
     struct s_stack_list *next;
 } t_stack_list;
 
@@ -39,6 +38,7 @@ void append_node(t_stack_list **head,int number);
 void print_list(t_stack_list *list);
 void else_of_atoi(t_stack_list** list,char** two_d,char* args);
 void check_is_sorted(int value,t_stack_list **list,char** two_d,char* args);
+int is_sorted(t_stack_list *list);
 
 
 #endif

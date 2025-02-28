@@ -1,6 +1,29 @@
 #include"header.h"
 
-
+int is_duplicated(t_stack_list *list)
+{
+    while(list && list->next)
+    {
+        if(list->number == list->next->number)
+        {
+            return 1;
+        }
+        list = list->next;
+    }
+    return 0;
+}
+void check_is_duplicated(int value,t_stack_list** list,char** two_d,char* args)
+{
+    if(value)
+    {
+        ft_putstr("ERROR","\n");
+        print_list(*list);
+        free_list(*list);
+        ftt_free(two_d);
+        free(args);
+        exit(1);
+    }
+}
 int main(int argc,char** argv)
 {
     if(argc <= 1 || !argv[1][0])
@@ -10,7 +33,8 @@ int main(int argc,char** argv)
     char** two_d;
     int i = 0;
     t_stack_list *list;
-    t_stack_list *test;
+    list = NULL;
+    
 
     args = join_args(argc,argv);
     two_d = split_args(args);
@@ -19,9 +43,9 @@ int main(int argc,char** argv)
         append_node(&list,ff_atoi(two_d[i],list,two_d,args));
         i++;
     }
-    test = list;
-    check_is_sorted(is_sorted(test),&list,two_d,args);
-    print_list(list);
+    check_is_sorted(is_sorted(list),&list,two_d,args);
+    check_is_duplicated(is_duplicated(list),&list,two_d,args);
+     print_list(list);
     free_list(list);
     ftt_free(two_d);
     free(args);

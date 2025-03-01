@@ -25,6 +25,7 @@ int	find_min(t_stack_list *a)
 	return (min);
 }
 
+
 int	find_second_min(t_stack_list *a, int min)
 {
 	int	sec_min;
@@ -88,6 +89,24 @@ void	sort_five(t_stack_list **a, t_stack_list **b)
 		sa(a);
 }
 
+void	push_swap(t_stack_list **a, t_stack_list **b)
+{
+	int	*arr;
+	int	len_a;
+
+	if (!a || !(*a) || !b)
+		return ;
+	len_a = ft_lstsize(*a);
+	if (len_a <= 1)
+		return ;
+	arr = create_sorted_arr(*a);
+	if (arr == NULL)
+		return (free_stack(a), write(2, "Error\n", 6), exit(1));
+	push_to_b(a, b, arr, len_a);
+	free(arr);
+	push_to_a(a, b);
+}
+
 
 int main(int argc,char** argv)
 {
@@ -113,6 +132,7 @@ int main(int argc,char** argv)
     {
         sort_five(&a,&b);
     }
+	
 
     print_list(a);
     free_list(a);

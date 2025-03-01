@@ -43,5 +43,15 @@ void sa(t_stack_list** list);
 void swap(t_stack_list** list);
 void    sb(t_stack_list **stack_b);
 void ss(t_stack_list **stack_a,t_stack_list** stack_b);
+void	pa(t_stack_list **dst, t_stack_list **src);
+void	pb(t_stack_list **dst, t_stack_list **src);
+void	r(t_stack_list **list);
+void	ra(t_stack_list **a);
+void	rb(t_stack_list **b);
+void	rr(t_stack_list **a, t_stack_list **b);
+void	rr0(t_stack_list **list);
+void	rra(t_stack_list **a);
+void	rrb(t_stack_list **b);
+void	rrr(t_stack_list **a, t_stack_list **b);
 
 #endif

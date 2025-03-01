@@ -32,4 +32,3 @@ void ss(t_stack_list **stack_a,t_stack_list** stack_b)
     ft_putstr_fd("ss\n", 1);
 
 }
-void pb()

@@ -1,29 +1,94 @@
 #include"header.h"
 
-int is_duplicated(t_stack_list *list)
+void	help_sort_five1(t_stack_list **a)
 {
-    while(list && list->next)
-    {
-        if(list->number == list->next->number)
-        {
-            return 1;
-        }
-        list = list->next;
-    }
-    return 0;
+	rra(a);
+	sa(a);
 }
-void check_is_duplicated(int value,t_stack_list** list,char** two_d,char* args)
+
+void	help_sort_five2(t_stack_list **a)
 {
-    if(value)
-    {
-        ft_putstr("ERROR","\n");
-        print_list(*list);
-        free_list(*list);
-        ftt_free(two_d);
-        free(args);
-        exit(1);
-    }
+	ra(a);
+	sa(a);
 }
+int	find_min(t_stack_list *a)
+{
+	int	min;
+
+	min = a->number;
+	while (a)
+	{
+		if (a->number < min)
+			min = a->number;
+		a = a->next;
+	}
+	return (min);
+}
+
+int	find_second_min(t_stack_list *a, int min)
+{
+	int	sec_min;
+
+	sec_min = 2147483647;
+	while (a)
+	{
+		if (a->number > min && a->number < sec_min)
+			sec_min = a->number;
+		a = a->next;
+	}
+	return (sec_min);
+}
+
+void	sort_three(t_stack_list **a)
+{
+	t_stack_list	*n1;
+	t_stack_list	*n2;
+	t_stack_list	*n3;
+
+	if (!a || !(*a) || !(*a)->next || !(*a)->next->next)
+		return ;
+	n1 = *a;
+	n2 = n1->next;
+	n3 = n2->next;
+	if (n2->number > n1->number && n2->number > n3->number && n1->number > n3->number)
+		rra(a);
+	else if (n2->number > n1->number && n2->number > n3->number
+		&& n1->number < n3->number)
+		help_sort_five1(a);
+	else if (n2->number < n1->number && n2->number < n3->number
+		&& n1->number < n3->number)
+		sa(a);
+	else if (n2->number < n1->number && n2->number < n3->number
+		&& n1->number > n3->number)
+		ra(a);
+	else if (n2->number < n1->number && n2->number > n3->number
+		&& n1->number > n3->number)
+		help_sort_five2(a);
+}
+void	sort_five(t_stack_list **a, t_stack_list **b)
+{
+	if (!a || !b || lst_size(*a) <= 1)
+		return ;
+	while (lst_size(*a) > 3)
+	{
+		if (lst_size(*a) == 5 && ((*a)->number == find_min(*a)
+				|| (*a)->number == find_second_min(*a, find_min(*a))))
+		{
+			pb(b, a);
+		}
+		else if (lst_size(*a) == 4 && (*a)->number == find_min(*a))
+			pb(b, a);
+		else
+			ra(a);
+	}
+	sort_three(a);
+	pa(a, b);
+	pa(a, b);
+	if ((*a)->number > (*a)->next->number)
+		sa(a);
+}
+
+
 int main(int argc,char** argv)
 {
     if(argc <= 1 || !argv[1][0])
@@ -31,23 +96,26 @@ int main(int argc,char** argv)
     
     char* args;
     char** two_d;
-    int i = 0;
-    t_stack_list *list;
-    list = NULL;
-    
+    t_stack_list *a;
+    t_stack_list *b;
+    a = NULL;
+    b = NULL;
 
     args = join_args(argc,argv);
     two_d = split_args(args);
-    while(two_d[i])
+     
+    create_stack_a(two_d,&a,args);
+    check_is_sorted(is_sorted(a),&a,two_d,args);
+    check_is_duplicated(is_duplicated(a),&a,two_d,args);
+    
+    is_lst_size(&a,two_d, args);
+    if(lst_size(a) <= 5)
     {
-        append_node(&list,ff_atoi(two_d[i],list,two_d,args));
-        i++;
-    } 
-    check_is_sorted(is_sorted(list),&list,two_d,args);
-    check_is_duplicated(is_duplicated(list),&list,two_d,args);
-    sa(&list);
-    print_list(list);
-    free_list(list);
+        sort_five(&a,&b);
+    }
+
+    print_list(a);
+    free_list(a);
     ftt_free(two_d);
     free(args);
     

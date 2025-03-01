@@ -39,6 +39,8 @@ void print_list(t_stack_list *list);
 void else_of_atoi(t_stack_list** list,char** two_d,char* args);
 void check_is_sorted(int value,t_stack_list **list,char** two_d,char* args);
 int is_sorted(t_stack_list *list);
+int is_duplicated(t_stack_list *list);
+void check_is_duplicated(int value,t_stack_list** list,char** two_d,char* args);
 void sa(t_stack_list** list);
 void swap(t_stack_list** list);
 void    sb(t_stack_list **stack_b);
@@ -53,5 +55,8 @@ void	rr0(t_stack_list **list);
 void	rra(t_stack_list **a);
 void	rrb(t_stack_list **b);
 void	rrr(t_stack_list **a, t_stack_list **b);
+void create_stack_a(char** two_d,t_stack_list** list,char* args);
+int lst_size(t_stack_list* list);
+void is_lst_size(t_stack_list** list,char** two_d,char* args);
 
 #endif

@@ -1,6 +1,6 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror #-fsanitize=address -g3
-SRC = main.c helpers1.c helpers2.c helpers3.c helpers4.c operations_push.c operations_rotate.c operations_swap.c operations_reverse.c helpers5.c
+SRC = main.c helpers1.c helpers2.c helpers3.c helpers4.c operations_push.c operations_rotate.c operations_swap.c operations_reverse.c helpers5.c sort_five.c 
 # BSRC = ./bonus_src/heredoc.c ./bonus_src/pipex_bonus.c ./bonus_src/get_next_line_project/get_next_line_bonus.c ./bonus_src/get_next_line_project/get_next_line_utils_bonus.c ./bonus_src/pipex_bonus_utils1.c ./bonus_src/pipex_bonus_utils2.c ./bonus_src/pipex_bonus_utils3.c ./bonus_src/here_doc_utils1.c ./bonus_src/here_doc_utils2.c
 NAME  = push_swap
 RM = rm -f

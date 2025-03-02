@@ -58,5 +58,12 @@ void	rrr(t_stack_list **a, t_stack_list **b);
 void create_stack_a(char** two_d,t_stack_list** list,char* args);
 int lst_size(t_stack_list* list);
 void is_lst_size(t_stack_list** list,char** two_d,char* args);
+void	help_sort_five1(t_stack_list **a);
+void	help_sort_five2(t_stack_list **a);
+int	find_min(t_stack_list *a);
+int	find_second_min(t_stack_list *a, int min);
+void	sort_three(t_stack_list **a);
+void	sort_five(t_stack_list **a, t_stack_list **b);
+int	max_ind(t_stack_list **b);
 
 #endif

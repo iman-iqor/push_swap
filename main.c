@@ -95,7 +95,7 @@ void	push_to_b(t_stack_list **a, t_stack_list **b, int *arr, int len_a)
 	int (i), (chunk);
 	i = 0;
 	chunk = decide_chunk(len_a);
-	while (*a && *a != NULL)
+	while (a && *a != NULL)
 	{
 		if ((*a)->number <= arr[i])
 		{
@@ -202,14 +202,18 @@ int main(int argc,char** argv)
     two_d = split_args(args);
      
     create_stack_a(two_d,&a,args);
-    check_is_sorted(is_sorted(a),&a,two_d,args);
     check_is_duplicated(is_duplicated(a),&a,two_d,args);
+    check_is_sorted(is_sorted(a),&a,two_d,args);
     
     is_lst_size(&a,two_d, args);
     if(lst_size(a) <= 5)
     {
         sort_five(&a,&b);
     }
+	else
+	{
+		push_swap(&a,&b);
+	}
 	
 
     // print_list(a);

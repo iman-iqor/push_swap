@@ -15,7 +15,7 @@ void check_is_sorted(int value,t_stack_list **list,char** two_d,char* args)
 {
     if(value)
     {
-        ft_putstr("ERROR sorted","\n");
+        write(2,"Error\n",1);
         free_list(*list);
         ftt_free(two_d);
         free(args);
@@ -24,21 +24,28 @@ void check_is_sorted(int value,t_stack_list **list,char** two_d,char* args)
 }
 int is_duplicated(t_stack_list *list)
 {
-    while(list && list->next)
-    {
-        if(list->number == list->next->number)
-        {
-            return 1;
-        }
-        list = list->next;
-    }
-    return 0;
+    t_stack_list	*tmp1;
+	t_stack_list	*tmp2;
+
+	tmp1 = list;
+	while (tmp1 != NULL)
+	{
+		tmp2 = tmp1->next;
+		while (tmp2 != NULL)
+		{
+			if (tmp2->number == tmp1->number)
+				return (1);
+			tmp2 = tmp2->next;
+		}
+		tmp1 = tmp1->next;
+	}
+	return (0);
 }
 void check_is_duplicated(int value,t_stack_list** list,char** two_d,char* args)
 {
     if(value)
     {
-        ft_putstr("ERROR duplicated ","\n");
+        write(2,"Error\n",6);
         free_list(*list);
         ftt_free(two_d);
         free(args);

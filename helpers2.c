@@ -35,7 +35,7 @@ int is_it_alpha(char* str)
     i = 0;
     while(str[i])
     {
-        if((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
+        if(!(str[i] >= '0' && str[i] <= '9'))
             return 1;
         i++;
     }
@@ -43,9 +43,9 @@ int is_it_alpha(char* str)
 }
 void check_int_overflow(long number,t_stack_list *list,char **two_d,char* args)
 {
-    if(number > INT_MAX || number < INT_MIN)
+    if(number >= INT_MAX || number <= INT_MIN)
     {
-        ft_putstr("ER","ROR\n");
+        write(2,"Error\n",6);
         free_list(list);
         ftt_free(two_d);
         free(args);
@@ -55,7 +55,7 @@ void check_int_overflow(long number,t_stack_list *list,char **two_d,char* args)
 }
 void else_of_atoi(t_stack_list** list,char** two_d,char* args)
 {
-        ft_putstr("ERRROR lettre","\n");
+        write(2,"Errror\n",6);
         free_list(*list);
         ftt_free(two_d);
         free(args);
@@ -71,21 +71,27 @@ int ff_atoi(char* str,t_stack_list *list,char **two_d,char* args)
     result= 0;
     signe = 1;
 
+    while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f'
+		|| str[i] == '\r' || str[i] == ' ')
+		i++;
     if(is_it_alpha(str))
         else_of_atoi(&list,two_d,args);
+    printf("a\n");
     i = 0;
     if(str[i] == '-' || str[i] == '+')
     {
-    if(str[i] == '-')
-        signe = -1;
-    i++;
+        if(str[i] == '-')
+            signe = -1;
+         i++;
     }
+    if (!(str[i] >= '0' && str[i] <= '9'))
+        else_of_atoi(&list, two_d, args);
     while(str[i]>= '0' && str[i] <= '9')
     {
         result = result *10 + str[i] - 48;
+        check_int_overflow(result * signe,list,two_d,args);
         i++;
     }
-    check_int_overflow(result * signe,list,two_d,args);
     return ((int)(result * signe));
 }
 

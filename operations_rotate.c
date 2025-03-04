@@ -1,5 +1,6 @@
 #include"header.h"
 
+// The first element becomes the last one
 void	r(t_stack_list **list)
 {
 	t_stack_list *tmp;

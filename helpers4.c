@@ -15,7 +15,7 @@ void check_is_sorted(int value,t_stack_list **list,char** two_d,char* args)
 {
     if(value)
     {
-        write(2,"Error\n",1);
+        write(2,"Error\n",6);
         free_list(*list);
         ftt_free(two_d);
         free(args);

@@ -184,7 +184,34 @@ void	push_swap(t_stack_list **a, t_stack_list **b)
 	free(arr);
 	push_to_a(a, b);
 }
-
+void is_it_space(char **str)
+{
+    int  i;
+    int len ;
+    int check;
+	int j;
+    i = 0;
+	while(str[i])
+	{
+		j = 0;
+		check = 0;
+    	len  = ft_strlen(str[i]);
+		while(str[i][j])
+    	{
+       		if(str[i][j] == ' ')
+       		{
+        		check++;
+       		}
+       		j++;
+    	}
+		if(check == len)
+    	{
+        	write(1,"Error\n",6);
+			exit(1);
+    	}
+		i++;
+	}
+}
 
 int main(int argc,char** argv)
 {
@@ -197,7 +224,7 @@ int main(int argc,char** argv)
     t_stack_list *b;
     a = NULL;
     b = NULL;
-
+	is_it_space(argv);
     args = join_args(argc,argv);
     two_d = split_args(args);
      
@@ -215,8 +242,6 @@ int main(int argc,char** argv)
 	{
 		push_swap(&a,&b);
 	}
-	
-
     // print_list(a);
     free_list(a);
     ftt_free(two_d);

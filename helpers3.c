@@ -6,7 +6,7 @@
 /*   By: imiqor <imiqor@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:01:47 by imiqor            #+#    #+#             */
-/*   Updated: 2025/03/04 22:13:38 by imiqor           ###   ########.fr       */
+/*   Updated: 2025/03/04 22:29:06 by imiqor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_stack_list	*create_node(int number)
 	node = malloc(sizeof(t_stack_list));
 	if (!node)
 	{
-		ft_putstr("memory alocation", "failed\n");
+        write(2,"memory allocation failed\n",25);
 		exit(1);
 	}
 	node->number = number;

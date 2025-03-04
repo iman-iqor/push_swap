@@ -6,7 +6,7 @@
 /*   By: imiqor <imiqor@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:00:39 by imiqor            #+#    #+#             */
-/*   Updated: 2025/03/04 22:03:31 by imiqor           ###   ########.fr       */
+/*   Updated: 2025/03/04 22:29:57 by imiqor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	main(int argc, char **argv)
 	t_stack_list	*a;
 	t_stack_list	*b;
 
-	if (argc <= 2)
+	if (argc <= 1)
 		return (1);
 	a = NULL;
 	b = NULL;

@@ -1,4 +1,5 @@
-#include"header.h"
+#include "header.h"
+
 void	pa(t_stack_list **dst, t_stack_list **src)
 {
 	t_stack_list	*push_node;

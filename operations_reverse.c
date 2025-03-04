@@ -1,4 +1,4 @@
-#include"header.h"
+#include "header.h"
 
 void	rr0(t_stack_list **list)
 {

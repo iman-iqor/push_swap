@@ -1,4 +1,4 @@
-#include"header.h"
+#include "header.h"
 
 void	help_sort_five1(t_stack_list **a)
 {
@@ -11,6 +11,7 @@ void	help_sort_five2(t_stack_list **a)
 	ra(a);
 	sa(a);
 }
+
 int	find_min(t_stack_list *a)
 {
 	int	min;
@@ -24,7 +25,6 @@ int	find_min(t_stack_list *a)
 	}
 	return (min);
 }
-
 
 int	find_second_min(t_stack_list *a, int min)
 {
@@ -51,7 +51,8 @@ void	sort_three(t_stack_list **a)
 	n1 = *a;
 	n2 = n1->next;
 	n3 = n2->next;
-	if (n2->number > n1->number && n2->number > n3->number && n1->number > n3->number)
+	if (n2->number > n1->number && n2->number > n3->number
+		&& n1->number > n3->number)
 		rra(a);
 	else if (n2->number > n1->number && n2->number > n3->number
 		&& n1->number < n3->number)
@@ -66,6 +67,7 @@ void	sort_three(t_stack_list **a)
 		&& n1->number > n3->number)
 		help_sort_five2(a);
 }
+
 void	sort_five(t_stack_list **a, t_stack_list **b)
 {
 	if (!a || !b || lst_size(*a) <= 1)

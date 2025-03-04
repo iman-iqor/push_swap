@@ -6,7 +6,7 @@
 /*   By: imiqor <imiqor@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:00:51 by imiqor            #+#    #+#             */
-/*   Updated: 2025/03/04 22:02:59 by imiqor           ###   ########.fr       */
+/*   Updated: 2025/03/04 22:15:52 by imiqor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	sort_arr(int *arr, int len)
 {
-	int(i), (j), (tmp);
+	int	i;
+	int	j;
+	int	tmp;
+
 	i = 0;
 	while (i < len)
 	{

@@ -6,7 +6,7 @@
 /*   By: imiqor <imiqor@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:01:47 by imiqor            #+#    #+#             */
-/*   Updated: 2025/03/04 22:03:22 by imiqor           ###   ########.fr       */
+/*   Updated: 2025/03/04 22:13:38 by imiqor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,4 @@ char	*join_args(int argc, char **argv)
 		i++;
 	}
 	return (args);
-}
-
-void	ft_putstr(char *s1, char *s2)
-{
-	if (!s1)
-		write(2, "(null)", 6);
-	else
-		write(2, s1, ft_strlen(s1));
-	write(2, s2, ft_strlen(s2));
 }

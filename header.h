@@ -6,7 +6,7 @@
 /*   By: imiqor <imiqor@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:01:19 by imiqor            #+#    #+#             */
-/*   Updated: 2025/03/04 22:03:11 by imiqor           ###   ########.fr       */
+/*   Updated: 2025/03/04 22:14:26 by imiqor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int						ff_atoi(char *str, t_stack_list *list, char **two_d,
 							char *args);
 int						is_it_alpha(char *str, int *i);
 char					*join_args(int argc, char **argv);
-void					ft_putstr(char *s1, char *s2);
 void					free_list(t_stack_list *head);
 t_stack_list			*create_node(int number);
 void					append_node(t_stack_list **head, int number);
@@ -103,5 +102,6 @@ int						max_ind(t_stack_list **b);
 void					push_to_a(t_stack_list **a, t_stack_list **b);
 void					is_it_space(char **str);
 void					is_it_null(char **argv, int argc);
+void					init_vars(t_atoa_state *vars);
 
 #endif

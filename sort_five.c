@@ -6,23 +6,11 @@
 /*   By: imiqor <imiqor@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:02:48 by imiqor            #+#    #+#             */
-/*   Updated: 2025/03/04 22:03:53 by imiqor           ###   ########.fr       */
+/*   Updated: 2025/03/04 22:11:42 by imiqor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
-
-void	help_sort_five1(t_stack_list **a)
-{
-	rra(a);
-	sa(a);
-}
-
-void	help_sort_five2(t_stack_list **a)
-{
-	ra(a);
-	sa(a);
-}
 
 int	find_min(t_stack_list *a)
 {

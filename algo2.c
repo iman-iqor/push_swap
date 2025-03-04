@@ -6,7 +6,7 @@
 /*   By: imiqor <imiqor@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:01:01 by imiqor            #+#    #+#             */
-/*   Updated: 2025/03/04 22:03:03 by imiqor           ###   ########.fr       */
+/*   Updated: 2025/03/04 22:16:51 by imiqor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,9 @@ void	check_b(t_stack_list **b)
 
 void	push_to_b(t_stack_list **a, t_stack_list **b, int *arr, int len_a)
 {
-	int(i), (chunk);
+	int	i;
+	int	chunk;
+
 	i = 0;
 	chunk = decide_chunk(len_a);
 	while (a && *a != NULL)

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   header.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: imiqor <imiqor@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/04 22:01:19 by imiqor            #+#    #+#             */
+/*   Updated: 2025/03/04 22:03:11 by imiqor           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef HEADER_H
 # define HEADER_H
 
@@ -25,11 +37,11 @@ typedef struct s_state
 
 typedef struct s_atoa_state
 {
-    int		i;
-	long	result;
-	int		signe;
-	int		tmp;
-}               t_atoa_state;
+	int					i;
+	long				result;
+	int					signe;
+	int					tmp;
+}						t_atoa_state;
 
 char					*ft_sstrjoin(char *save, char *buff);
 char					**split_args(char *args);

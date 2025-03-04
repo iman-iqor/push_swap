@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algo1.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: imiqor <imiqor@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/03/04 22:00:51 by imiqor            #+#    #+#             */
+/*   Updated: 2025/03/04 22:02:59 by imiqor           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
 void	sort_arr(int *arr, int len)
@@ -44,8 +56,8 @@ int	*create_sorted_arr(t_stack_list *a)
 
 void	push_swap(t_stack_list **a, t_stack_list **b)
 {
-	int *arr;
-	int len_a;
+	int	*arr;
+	int	len_a;
 
 	if (!a || !(*a) || !b)
 		return ;
